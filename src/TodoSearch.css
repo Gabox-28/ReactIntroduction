@@ -1,0 +1,19 @@
+.search-container{
+    width: 400px;
+    height: 25px;
+    padding: 10px;
+    border-radius: 8px;
+    background: #1d1f21;
+    box-shadow:  7px 7px 15px #111213,
+    -7px -7px 15px #292c2f;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-input{
+    background: #1d1f21;
+    border: none;
+    outline: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+}

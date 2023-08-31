@@ -1,0 +1,43 @@
+.item-container{
+    width: 420px;
+    border-radius: 8px;
+    background: #1d1f21;
+    box-shadow:  7px 7px 15px #111213,
+    -7px -7px 15px #292c2f;
+    display: flex;
+    justify-content: center;
+}
+
+.item-container:hover .icon {
+    visibility: visible;
+}
+
+.checkbox{
+    justify-self: start;
+}
+
+li{
+    display: flex;
+    align-content: center;
+    width: 90%;
+    justify-content: space-between;
+}
+
+.icon{
+    visibility: hidden;
+}
+
+i{
+    font-size: 24px !important;
+    color: #737980;
+    height: 24px !important;
+    align-self: center;
+    cursor: pointer;
+}
+
+
+p{
+    color: #737980;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+}
