@@ -18,13 +18,6 @@ const defaultTodos = [
 function App() {
   return (
     <>
-      <section className={'NewTodos'}>
-        <h1>Agrega una nueva tarea</h1>
-        <TodoInput placeholder={'Nueva tarea'}/>
-        <CreateTodoButton/>
-        <TodoImage/>
-      </section>
-
 
       <section className={'TodoList'}>
         <TodoCounter completed={3} total={9}/>
@@ -34,8 +27,9 @@ function App() {
             <TodoItem key={todo.text} text={todo.text} completed={todo.completed}/>
           ))}
         </TodoList>
-      </section>
 
+        <CreateTodoButton/>
+      </section>
     </>
   );
 }
