@@ -1,9 +1,9 @@
 import './TodoItem.css'
-function TodoItem({ text, completed, onComplete, onDelete}){
+function TodoItem({ text, completed, onMark, onDelete}){
   return (
     <div className={'item-container'}>
       <li>
-        <i className={`fa fa-check icon ${completed && "icon-completed"}`} onClick={onComplete}></i>
+        <i className={`fa fa-check icon ${completed && "icon-completed"}`} onClick={onMark}></i>
         <p className={`${completed && "text-completed"}`}>{text}</p>
         <i className={"fa fa-remove icon-close"} onClick={onDelete}></i>
       </li>

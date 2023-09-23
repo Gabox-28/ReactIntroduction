@@ -21,10 +21,10 @@ function App() {
   const completedTodos = todos.filter(todo => todo.completed === true).length
   const totalTodos = todos.length
 
-  const completeTodo = (text) => {
+  const markTodo = (text) => {
     const newTodos = [...todos]
     const todoIndex = newTodos.findIndex(todo => todo.text === text)
-    newTodos[todoIndex].completed = true
+    newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
     setTodos(newTodos)
   }
 
@@ -37,13 +37,12 @@ function App() {
 
   return (
     <>
-
       <section className={'TodoList'}>
         <TodoCounter completed={completedTodos} total={totalTodos}/>
         <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
         <TodoList>
           {todos.filter(todo => todo.text.toLowerCase().includes(searchValue.toLowerCase())).map(todo => (
-            <TodoItem key={todo.text} text={todo.text} completed={todo.completed} todos={todos} setTodos={setTodos} onComplete={() => completeTodo(todo.text)}
+            <TodoItem key={todo.text} text={todo.text} completed={todo.completed} todos={todos} setTodos={setTodos} onMark={() => markTodo(todo.text)}
             onDelete={() => deleteTodo(todo.text)}/>
           ))}
         </TodoList>
