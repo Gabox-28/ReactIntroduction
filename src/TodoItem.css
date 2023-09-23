@@ -8,12 +8,18 @@
     justify-content: center;
 }
 
-.item-container:hover .icon {
+.item-container:hover .icon-close {
     visibility: visible;
+}
+
+input[type="checkbox"] {
+    accent-color: #a4a4a4;
 }
 
 .checkbox{
     justify-self: start;
+    width: 20px;
+
 }
 
 li{
@@ -23,8 +29,16 @@ li{
     justify-content: space-between;
 }
 
-.icon{
+.icon-close{
     visibility: hidden;
+}
+
+.icon-completed{
+    color: #97ca3f;
+}
+
+.text-completed{
+    text-decoration: line-through;
 }
 
 i{

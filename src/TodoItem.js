@@ -1,11 +1,11 @@
 import './TodoItem.css'
-function TodoItem({text, completed}){
+function TodoItem({ text, completed, onComplete, onDelete}){
   return (
     <div className={'item-container'}>
       <li>
-        <input className={'checkbox'} type="checkbox"/>
-        <p>{text}</p>
-        <i className={"fa fa-remove icon"}></i>
+        <i className={`fa fa-check icon ${completed && "icon-completed"}`} onClick={onComplete}></i>
+        <p className={`${completed && "text-completed"}`}>{text}</p>
+        <i className={"fa fa-remove icon-close"} onClick={onDelete}></i>
       </li>
     </div>
   )

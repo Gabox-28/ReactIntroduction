@@ -6,7 +6,6 @@ function TodoSearch({searchValue, setSearchValue}){
     <div className={'search-container'}>
       <input className={'search-input'} placeholder={'Busca una tarea'} type="text" value={searchValue} onChange={(event) => {
         setSearchValue(event.target.value)
-
       }}/>
       <i className={"fa fa-search"}></i>
     </div>
