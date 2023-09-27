@@ -1,9 +1,4 @@
-import {TodoCounter} from "../TodoCounter/TodoCounter";
-import {TodoInput} from "../TodoInput/TodoInput";
-import {TodoList} from "../TodoList/TodoList";
-import {TodoItem} from "../TodoItem/TodoItem";
-import {CreateTodoButton} from "../CreateTodoButton/CreateTodoButton";
-import {TodoSearch} from "../TodoSearch/TodoSearch";
+import {AppUI} from "./AppUI";
 import {useLocalStorage} from "./useLocalStorage";
 import './App.css'
 import React from "react";
@@ -15,13 +10,12 @@ const defaultTodos = [
 ]
 
 function Index() {
-  const [todos, saveTodos] = useLocalStorage()
+  const {item: todos, saveItem: saveTodos, loading, error} = useLocalStorage('TODOS_V1', [])
   const [searchValue, setSearchValue] = React.useState('')
 
   const completedTodos = todos.filter(todo => todo.completed === true).length
   const totalTodos = todos.length
-
-
+  const searchedTodos = todos.filter(todo => todo.text.toLowerCase().includes(searchValue.toLowerCase()))
 
   const markTodo = (text) => {
     const newTodos = [...todos]
@@ -37,22 +31,7 @@ function Index() {
     saveTodos(newTodos)
   }
 
-  return (
-    <>
-      <section className={'TodoList'}>
-        <TodoCounter completed={completedTodos} total={totalTodos}/>
-        <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
-        <TodoList>
-          {todos.filter(todo => todo.text.toLowerCase().includes(searchValue.toLowerCase())).map(todo => (
-            <TodoItem key={todo.text} text={todo.text} completed={todo.completed} onMark={() => markTodo(todo.text)}
-            onDelete={() => deleteTodo(todo.text)}/>
-          ))}
-        </TodoList>
-
-        <CreateTodoButton/>
-      </section>
-    </>
-  );
+  return (<AppUI completedTodos={completedTodos} totalTodos={totalTodos} searchValue={searchValue} setSearchValue={setSearchValue} searchedTodos={searchedTodos} completeTodo={markTodo} deleteTodo={deleteTodo} loading={loading} error={error} />)
 }
 
 
