@@ -1,0 +1,53 @@
+form{
+    width: 500px;
+    height: 350px;
+    border-radius: 14px;
+    background: #1d1f21;
+    background: linear-gradient(145deg, #1f2123, #1a1c1e);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+label{
+    color: white;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    font-size: 25px;
+}
+
+textarea{
+    min-width: 360px;
+    max-width: 360px;
+    min-height: 80px;
+    max-height: 80px;
+    outline: none;
+    border: none;
+    padding: 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(128, 128, 128);
+    border-radius: 8px;
+    background: linear-gradient(145deg, #1f2123, #1a1c1e);
+    box-shadow:  8px 8px 16px #161719,
+    -8px -8px 16px #242729;
+}
+
+.todoForm-buttonContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.todoForm-button{
+    color: white;
+    width: 100px;
+    height: 40px;
+    border-radius: 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+}

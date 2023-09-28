@@ -8,7 +8,7 @@ function useLocalStorage(itemName, initialValue) {
   React.useEffect(() => {
     setTimeout(() => {
       try {
-        const localStorageItem = localStorage.getItem('itemName')
+        const localStorageItem = localStorage.getItem(itemName)
         let parsedItem
 
         if (localStorageItem) {
