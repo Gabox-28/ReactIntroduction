@@ -1,10 +1,8 @@
 import './CreateTodoButton.css'
-import {TodoContext} from "../TodoContext";
+import {TodoContext} from "../App/useTodos";
 import React from "react";
 
-function CreateTodoButton(){
-  const {toggleModal} = React.useContext(TodoContext)
-
+function CreateTodoButton({toggleModal}){
   return (
     <div className={'button-container'}>
       <button onClick={toggleModal} ><i className={"fa fa-plus"}></i></button>
