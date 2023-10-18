@@ -10,10 +10,14 @@
     justify-content: space-between;
 }
 
-.search-input{
+.search-input {
     background: #1d1f21;
     border: none;
     outline: none;
     font-family: 'Inter', sans-serif;
     font-size: 16px;
+}
+
+.search-input:disabled{
+    opacity: 25%;
 }

@@ -1,11 +1,13 @@
 .todo-loading-container{
-    width: 100%;
+    width: 420px;
     height: 50px;
     background-color: #2a2d2f;
     border-radius: 8px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 10px 0;
+
     animation-duration: 3s;
     animation-name: LoadingAnimation;
     animation-iteration-count: infinite;

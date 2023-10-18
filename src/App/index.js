@@ -19,20 +19,20 @@ function App() {
   return (
     <>
       <section className={'TodoList'}>
-        <TodoHeader>
+        <TodoHeader loading={loading}>
           <TodoCounter totalTodos={totalTodos} completedTodos={completedTodos}/>
           <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue}/>
         </TodoHeader>
-        <TodoList>
-          {loading && <TodosLoading/>}
-          {error && <TodosError/>}
-          {(!loading && searchedTodos.length === 0) && <TodosEmpty/>}
 
-          {searchedTodos.map(todo => (
-            <TodoItem key={todo.text} text={todo.text} completed={todo.completed} onMark={() => markTodo(todo.text)}
-                      onDelete={() => deleteTodo(todo.text)}/>
-          ))}
-        </TodoList>
+        <TodoList error={error} onError={() => <TodosError/>}
+                  loading={loading} onLoading={() => <TodosLoading/>}
+                  searchedTodos={searchedTodos} onEmptyTodos={() => <TodosEmpty/>}
+                  totalTodos={totalTodos} searchText={searchValue} onEmptySearchResults={(searchText) => <p>No hay resultados para {searchText}</p>}
+                  render={todo => (
+                    <TodoItem key={todo.text} text={todo.text} completed={todo.completed} onMark={() => markTodo(todo.text)}
+                    onDelete={() => deleteTodo(todo.text)}/>
+                  )}/>
+
 
         <CreateTodoButton toggleModal={toggleModal}/>
 

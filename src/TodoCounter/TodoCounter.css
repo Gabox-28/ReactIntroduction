@@ -4,3 +4,7 @@ h1 {
     margin: 0;
     padding: 48px;
 }
+
+.TodoCounter--loading{
+    opacity: 25%;
+}

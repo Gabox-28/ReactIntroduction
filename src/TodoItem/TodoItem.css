@@ -6,6 +6,7 @@
     -7px -7px 15px #292c2f;
     display: flex;
     justify-content: center;
+    margin: 10px 0;
 }
 
 .item-container:hover .icon-close {
