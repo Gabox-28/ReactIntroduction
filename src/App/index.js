@@ -12,9 +12,10 @@ import {TodoItem} from "../TodoItem/TodoItem";
 import {CreateTodoButton} from "../CreateTodoButton/CreateTodoButton";
 import {Modal} from "../Modal";
 import {TodoForm} from "../TodoForm";
+import {ChangeAlertWithStorageListener} from "../ChangeAlert";
 
 function App() {
-  const {loading, error, searchedTodos, markTodo, deleteTodo, openModal, completedTodos, totalTodos, searchValue, setSearchValue, toggleModal, addTodo} = useTodos()
+  const {loading, error, searchedTodos, markTodo, deleteTodo, openModal, completedTodos, totalTodos, searchValue, setSearchValue, toggleModal, addTodo, synchronizeTodos} = useTodos()
 
   return (
     <>
@@ -41,6 +42,8 @@ function App() {
             <TodoForm addTodo={addTodo} toggleModal={toggleModal}/>
           </Modal>
         )}
+
+        <ChangeAlertWithStorageListener synchronize={synchronizeTodos}/>
       </section>
     </>
   )
