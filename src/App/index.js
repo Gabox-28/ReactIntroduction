@@ -12,7 +12,7 @@ import {TodoItem} from "../TodoItem/TodoItem";
 import {CreateTodoButton} from "../CreateTodoButton/CreateTodoButton";
 import {Modal} from "../Modal";
 import {TodoForm} from "../TodoForm";
-import {ChangeAlertWithStorageListener} from "../ChangeAlert";
+import {ChangeAlert} from "../ChangeAlert";
 
 function App() {
   const {loading, error, searchedTodos, markTodo, deleteTodo, openModal, completedTodos, totalTodos, searchValue, setSearchValue, toggleModal, addTodo, synchronizeTodos} = useTodos()
@@ -43,7 +43,7 @@ function App() {
           </Modal>
         )}
 
-        <ChangeAlertWithStorageListener synchronize={synchronizeTodos}/>
+        <ChangeAlert synchronize={synchronizeTodos}/>
       </section>
     </>
   )
